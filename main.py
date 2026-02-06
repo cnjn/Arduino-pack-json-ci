@@ -147,7 +147,7 @@ def GCC():
 
 def AirISP():
     data = {'name': "AirISP", 'version': AirISPVersion}
-    dataCn = data
+    dataCn = data.copy()
     system = []
     systemCn = []
 
@@ -262,7 +262,7 @@ def PackagesAirM2M():
     platformsCn = []
 
     PlatformsVersion.extend(GetRepoVersion("Air-duino", "Arduino-AirMCU"))
-    for item in PlatformsVersion:
+    for item in PlatformsVersion[:1]:
         temp, tempCn = PlatformsAirMCU(item)
         platforms.append(temp)
         platformsCn.append(tempCn)
